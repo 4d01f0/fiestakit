@@ -1,0 +1,607 @@
+body {
+	background-attachment: scroll;
+	background-image: url(back1.jpg);
+	background-repeat: no-repeat;
+	background-position: left 25px;
+	background-color: #22AEEB;
+	margin-left: 0px;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 0px;
+}
+
+.topnegro {
+	font-family: "Trebuchet MS";
+	font-size: 14px;
+	font-style: normal;
+	line-height: 25px;
+	font-weight: normal;
+	font-variant: normal;
+	color: #A2FFFF;
+	text-decoration: none;
+	display: inline;
+	height: 25px;
+	background-color: #000000;
+}
+.txt {
+	font-family: "Trebuchet MS";
+	font-size: 14px;
+	line-height: 130%;
+	font-weight: bold;
+	color: #333333;
+	margin-top: 15px;
+	margin-right: 5px;
+	margin-bottom: 15px;
+	margin-left: 2px;
+}
+
+.txt2 {
+	font-family: "Trebuchet MS", Arial, Georgia;
+	font-size: 18px;
+	line-height: 110%;
+	font-weight: normal;
+	color: #FFFFFF;
+	text-align: center;
+	padding: 5px;
+}
+
+.txt3 {
+	font-family: "Trebuchet MS";
+	font-size: 13px;
+	line-height: normal;
+	font-weight: normal;
+	color: #333333;
+	margin-right: 3px;
+}
+
+.txt4 {
+	font-family: "Trebuchet MS";
+	font-size: 11px;
+	line-height: normal;
+	font-weight: normal;
+	color: #333333;
+	position: relative;
+	margin-bottom: 20px;
+}
+.txt5 {
+	font-family: "Trebuchet MS", Arial, Georgia;
+	font-size: 14px;
+	line-height: 20px;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+	display: block;
+	float: none;
+	margin-top: 15px;
+}
+.trebuchet {
+	font-family: "Trebuchet MS", Arial, Georgia;
+	font-size: 13px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	color: #333333;
+}
+
+.trebuchet12 {
+	font-family: "Trebuchet MS", Arial, Georgia;
+	font-size: 12px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	color: #333333;
+}
+
+.AB {
+	font-family: "Trebuchet MS";
+	font-size: 24px;
+	font-style: normal;
+	font-weight: normal;
+	color: #000000;
+	text-decoration: none;
+	padding-left: 35px;
+	padding-top: 0px;
+}
+
+
+.lista2 a:link {
+	font-family: "Trebuchet MS";
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 135%;
+	font-weight: bold;
+	color: #0909AE;
+	padding-left: 35px;
+}
+
+.lista2 a:hover {
+	font-family: "Trebuchet MS";
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 135%;
+	font-weight: bold;
+	color: #FF3300;
+	padding-left: 35px;
+}
+
+.lista2 a:visited{
+	font-family: "Trebuchet MS";
+	text-decoration: none;
+	font-size: 14px;
+	line-height: 135%;
+	font-weight: bold;
+	color: #0909AE;
+	padding-left: 35px;
+}
+
+
+
+#letras {
+	font-family: "Trebuchet MS";
+	font-size: 13px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+	display: inline;
+}
+
+
+#menuLinks a:link {
+	color: #ffffff;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: baseline;
+	display: block;
+	padding: 2px 15px 2px 10px;
+	font-family: "Trebuchet MS";
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 25px;
+}
+
+
+#menuLinks a:hover{
+	color: #ffffff;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: baseline;
+	display: block;
+	padding: 2px 15px 2px 10px;
+	font-family: "Trebuchet MS";
+	font-size: 14px;
+	font-weight: bold;
+	background-color: #607783;
+	line-height: 25px;
+}
+
+#menuLinks a:visited{
+	color: #ffffff;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: baseline;
+	display: block;
+	padding: 2px 15px 2px 10px;
+	font-family: "Trebuchet MS";
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 25px;
+}
+
+/*inicia menu lateral izquierdo*/
+
+#list-menu {
+width: 150px;
+}
+
+#list-menu ul {
+margin: 0; 
+padding: 0;
+list-style-type: none;
+font-family: "Trebuchet MS";
+font-size: 14px;
+font-weight: bold;
+}
+
+#list-menu li {
+margin: 2px 0 0;
+}
+
+#list-menu a {
+display: block;
+width:150px;
+padding: 2px 2px 2px 30px;
+text-decoration: none;
+}
+
+#list-menu a:link, #list-menu a:active, #list-menu a:visited {
+color: #0909AE;
+}
+
+#list-menu a:hover {
+color: #FF3300;
+}
+
+/*termina menu lateral izquierdo*/
+
+/*inicia menu general*/
+
+#list-menu2 {
+width: 200px;
+}
+
+#list-menu2 ul {
+margin: 0; 
+padding: 0;
+list-style-type: none;
+font-family: "Trebuchet MS";
+font-size: 14px;
+font-weight: bold;
+}
+
+#list-menu2 li {
+margin: 2px 0 0;
+}
+
+#list-menu2 a {
+display: block;
+width:200px;
+padding: 2px 2px 2px 38px;
+text-decoration: none;
+}
+
+#list-menu2 a:link, #list-menu2 a:active, #list-menu2 a:visited {
+color: #0909AE;
+}
+
+#list-menu2 a:hover {
+color: #FF3300;
+}
+/*termina menu general*/
+
+/*inicia menu de resulta*/
+
+#list-menu3 {
+width: 260px;
+}
+
+#list-menu3 ul {
+margin: 0; 
+padding: 0;
+list-style-type: none;
+font-family: "Trebuchet MS";
+font-size: 14px;
+font-weight: bold;
+}
+
+#list-menu3 li {
+margin: 0px 0 0;
+}
+
+#list-menu3 a {
+display: block;
+width:260px;
+padding: 1px 2px 1px 25px;
+text-decoration: none;
+}
+
+#list-menu3 a:link, #list-menu3 a:active, #list-menu3 a:visited {
+color: #0909AE;
+}
+
+#list-menu3 a:hover {
+color: #FF3300;
+}
+/*termina menu de resulta*/
+
+
+
+
+.tubuscaste {
+	font-family: "Trebuchet MS", Arial, Georgia;
+	font-size: 13px;
+	font-weight: normal;
+	color: #333333;
+	text-decoration: none;
+	letter-spacing: -1px;
+}
+
+
+
+
+/*lo que busco*/
+
+.loquebusco a:link {
+	color: #FFFFFF;
+	text-decoration: underline;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.loquebusco a:visited{
+	color: #FFFFFF;
+	text-decoration: underline;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.loquebusco a:link, .loquebusco a:active, .loquebusco a:visited {
+color: #FFFFFF;
+}
+
+.loquebusco a:hover {
+	color: #000000;
+	text-decoration: underline;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+/*termina lo que busco*/
+
+
+
+.diagonal {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	color: #FFFFFF;
+	font-weight: bold;
+}
+
+
+
+
+
+.resultado {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-weight: bold;
+	color: #333333;
+	text-decoration: none;
+}
+.titulo {
+	font-family: "Trebuchet MS", Arial, Georgia;
+	font-size: 16px;
+	line-height: 35px;
+	font-weight: bold;
+	color: #003399;
+	text-decoration: none;
+	background-image: url(back-barra-resulta.jpg);
+	display: block;
+	padding-left: 20px;
+}
+.descripcion {
+	font-family: "Trebuchet MS", Arial, Georgia;
+	font-size: 13px;
+	line-height: 15px;
+	color: #333333;
+	text-decoration: none;
+	font-weight: normal;
+	background-color: #FFF39F;
+	display: block;
+	padding-top: 15px;
+	padding-right: 20px;
+	padding-bottom: 0px;
+	padding-left: 20px;
+}
+.mas {
+	display: block;
+	float: none;
+	height: 29px;
+	width: 29px;
+}
+.video {
+	padding: 10px;
+	width: 425px;
+	float: left;
+}
+
+.ixx a:link {
+	color: #0909AE;
+	text-decoration: underline;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.ixx a:visited{
+	color: #0909AE;
+	text-decoration: underline;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.ixx a:link, .ixx a:active, .ixx a:visited {
+color: #0909AE;
+}
+
+.ixx a:hover {
+	color: #287609;
+	text-decoration: underline;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	font-weight: bold;
+}
+
+#detalle a:link {
+	color: #0909AE;
+	text-decoration: underline;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 25px;
+}
+
+
+#detalle a:hover{
+	color: #287609;
+	text-decoration: underline;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 25px;
+}
+
+#detalle a:visited{
+	color: #0909AE;
+	text-decoration: underline;;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 25px;
+}
+
+
+#numeros a:link {
+	color: #666666;
+	text-align: left;
+	vertical-align: baseline;
+	display: inline;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 25px;
+	padding: 5px;
+	text-decoration: none;
+}
+
+
+#numeros a:hover{
+	color: #FFFFFF;
+	text-align: left;
+	vertical-align: baseline;
+	display: inline;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 25px;
+	padding: 5px;
+	background-color: #003366;
+	text-decoration: none;
+}
+
+#numeros a:visited{
+	color: #666666;
+	text-align: left;
+	vertical-align: baseline;
+	display: inline;
+	font-family: "Trebuchet MS";
+	font-size: 12px;
+	font-weight: bold;
+	line-height: 25px;
+	padding: 5px;
+	text-decoration: none;
+}
+.detantos {
+	font-family: "Trebuchet MS", Arial, Georgia;
+	font-size: 12px;
+	font-style: normal;
+	line-height: 25px;
+	font-weight: normal;
+	color: #0909AE;
+	text-decoration: none;
+}
+.trebuchet11pix {
+
+	font-family: "Trebuchet MS", Arial, Georgia;
+	font-size: 11px;
+	font-style: normal;
+	line-height: normal;
+	font-weight: normal;
+	color: #333333;
+}
+.sieres {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	font-style: normal;
+	line-height: 20px;
+	font-weight: bold;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+.asterisco {
+
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	font-style: normal;
+	line-height: 18px;
+	font-weight: bold;
+	color: #0909AE;
+	text-decoration: none;
+}
+.titulante {
+	font-family: "Trebuchet MS", Arial, Georgia;
+	font-size: 15px;
+	font-style: normal;
+	font-weight: bold;
+	color: #333333;
+	text-decoration: none;
+}
+.coll 
+{
+border-collapse: collapse
+}
+
+.ARIAL12 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 12px;
+	font-style: normal;
+	font-weight: bold;
+	color: #333333;
+	text-decoration: none;
+}
+
+.ARIAL16 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: bold;
+	color: #0000FF;
+	text-decoration: none;
+}
+.ARIAL10 {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 10px;
+	font-style: normal;
+	font-weight: normal;
+	color: #0000FF;
+	text-decoration: none;
+}
+.trebuchet15 {
+	font-family: "Trebuchet MS", Arial, Georgia;
+	font-size: 14px;
+	font-weight: bold;
+	color: #FF3300;
+}
+
+.tre14 a:link, .tre14 a:active, .tre14 a:visited {
+color: #0909AE;
+}
+
+.tre14 a:link {
+	color: #0909AE;
+	text-decoration: none;
+	font-family: "Trebuchet MS";
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.tre14 a:visited{
+	color: #0909AE;
+	text-decoration: none;
+	font-family: "Trebuchet MS";
+	font-size: 14px;
+	font-weight: bold;
+}
+
+.tre14 a:hover {
+	color: #287609;
+	text-decoration: underline;
+	font-family: "Trebuchet MS";
+	font-size: 14px;
+	font-weight: bold;
+}

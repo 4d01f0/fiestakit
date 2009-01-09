@@ -1,0 +1,10 @@
+<h2><?=$this->title?></h2>
+<!-- ?php if($this->formStat) { ? -->
+<form action="<?=$this->formself;?>" name="encuesta" method="post">
+ Nombre<input type="text" name="nombre" />
+ Edad<input type="text" name="edad" />
+ Profesion<input type="text" name="profesion" />
+ <input type="submit" value="Enviar" />
+</form>
+<?=$this->recibe?>
+<!-- ?PHP } ? -->
