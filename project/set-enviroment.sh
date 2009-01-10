@@ -12,6 +12,8 @@
 # 
 # $Id:$
 
+export MYUSER="Adolfo Morales"
+export MYENTERPRISE="MashedCode Co."
 export MYEMAIL="adolfo.morales@gmail.com"
 export SYSNAME="FiestaKit"
 export SYSDESCRIPTION="Página para promocionar todo lo necesario para fiestas"

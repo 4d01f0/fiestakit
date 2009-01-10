@@ -35,7 +35,7 @@ ini_set("log_errors","ON");
 ini_set("error_log","../logs/worktogether.log");
 ini_set("use_only_cookies","ON");
 ini_set("session.auto_start", "ON");
-ini_set("session.name","WTSESS");
+ini_set("session.name","FKSESS");
 ini_set("session.save_path","../logs/sessions");
 
 // bibliotecas
@@ -61,7 +61,7 @@ if( !isset($registry->config) )
    Zend_Registry::set('config', $config);
    
    // sesion
-   $session = new Zend_Session_Namespace("wtSession");
+   $session = new Zend_Session_Namespace("fkSession");
    $session->initialized = true;
 
 }
