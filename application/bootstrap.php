@@ -6,7 +6,7 @@
  * 
  * @author       Adolfo Morales  <adolfo.morales@gmail.com> 
  * @package      FiestaKit
- * @copyright    Copyright 2008 Grupo Editorial Expansion	
+ * @copyright    Copyright 2009 MashedCode Co.	
  * @filesource   
  * 
  */
@@ -14,7 +14,7 @@
 //
 //	requires
 /**
- * bootstrap.php :: --here short description--
+ * bootstrap.php :: bootstrap for the front controller
  * 
  * --long description--
  * 
@@ -26,98 +26,64 @@
  * 
  */
 
-// Step 1: APPLICATION CONSTANTS - Set the constants to use in this application.
-// These constants are accessible throughout the application, even in ini 
-// files. We optionally set APPLICATION_PATH here in case our entry point 
-// isn't index.php (e.g., if required from our test suite or a script).
-defined('APPLICATION_PATH')
-or define('APPLICATION_PATH', dirname(__FILE__));
+//
+// Setup of php.ini
+error_reporting(E_ALL); 
+ini_set("display_startup_errors", "OFF");
+ini_set("display_errors","ON");
+ini_set("log_errors","ON");
+ini_set("error_log","../logs/worktogether.log");
+ini_set("use_only_cookies","ON");
+ini_set("session.auto_start", "ON");
+ini_set("session.name","WTSESS");
+ini_set("session.save_path","../logs/sessions");
 
-defined('APPLICATION_ENVIRONMENT')
-or define('APPLICATION_ENVIRONMENT', 'development');
+// bibliotecas
+set_include_path("../library" . PATH_SEPARATOR . get_include_path());  
 
-// Step 2: FRONT CONTROLLER - Get the front controller.
-// The Zend_Front_Controller class implements the Singleton pattern, which is a
-// design pattern used to ensure there is only one instance of
-// Zend_Front_Controller created on each request.
-$frontController = Zend_Controller_Front::getInstance();
+// controladores, modelos y vistas
+require_once("Zend/Loader.php"); 
+Zend_Loader::registerAutoload(); 
+set_include_path("../application" . PATH_SEPARATOR . get_include_path());  
 
-// Step 3: CONTROLLER DIRECTORY SETUP - Point the front controller to your action
-// controller directory.
-$frontController->setControllerDirectory(APPLICATION_PATH . '/controllers');
+// save info
+require_once("../project/encrypt-it.php");
+require_once("../application/models/dbConnection.php");
 
-// Step 4: APPLICATION ENVIRONMENT - Set the current environment.
-// Set a variable in the front controller indicating the current environment --
-// commonly one of development, staging, testing, production, but wholly
-// dependent on your organization's and/or site's needs.
-$frontController->setParam('env', APPLICATION_ENVIRONMENT);
+//
+// GO !
+$registry = Zend_Registry::getInstance();
 
-// Step 5: CLEANUP - Remove items from global scope.
-// This will clear all our local boostrap variables from the global scope of 
-// this script (and any scripts that called bootstrap).  This will enforce 
-// object retrieval through the applications's registry.
-# unset($frontController);
+if( !isset($registry->config) )
+{
+   // configuracion
+   $config = new Zend_Config_Ini("../application/config.ini", "development_env");
+   Zend_Registry::set('config', $config);
+   
+   // sesion
+   $session = new Zend_Session_Namespace("wtSession");
+   $session->initialized = true;
 
-// ***********  LAYOUT SETUP - Setup the layout component
-// The Zend_Layout component implements a composite (or two-step-view) pattern
-// With this call we are telling the component where to find the layouts scripts.
-Zend_Layout::startMvc(APPLICATION_PATH . '/layouts/scripts');
-
-// VIEW SETUP - Initialize properties of the view object
-// The Zend_View component is used for rendering views. Here, we grab a "global" 
-// view instance from the layout object, and specify the doctype we wish to 
-// use. In this case, XHTML1 Strict.
-$view = Zend_Layout::getMvcInstance()->getView();
-$view->doctype('XHTML1_STRICT');
-
-/** 
- * Cargar configuracion
- *
- */
-$enviroment = "production";
-#$config = new Zend_Config_Ini("../application/config.ini", $enviroment);
-$config = new Zend_Config_Ini(require "../application/config.ini");
-#echo $config->webhost;
-
-#$frontController->setParam("env", $enviroment);
-#$frontController->setParam("config", $config);
-#Zend_Session::start();
-#$session = new Zend_Session_Namespace($enviroment);
-
-
-/** 
- * Registrar DB
- *
- */
-try {
-   #$db = Zend_Db::factory($config->db);
-	$config = new Zend_Config(
-		array(
-			'database' => array(
-				'adapter' => 'Mysqli',
-				'params' => array(
-					'dbname' => 'fiestakit',
-					'username' => 'fiestakit',
-					'password' => 'f13st4k1t',
-				)
-			)
-		)
-	);
-
-	$db = Zend_Db::factory($config->database);
-   $db->getConnection();
-   $db->setFetchMode(Zend_Db::FETCH_OBJ);
-   Zend_Db_Table::setDefaultAdapter($db);
-} catch (Zend_Db_Adapter_Exception $e) {
-   // perhaps a failed login credential, or perhaps the RDBMS is not running
-} catch (Zend_Exception $e) {
-   // perhaps factory() failed to load the specified Adapter class
 }
 
-// CLEANUP - remove items from global scope
-// This will clear all our local boostrap variables from the global scope of 
-// this script (and any scripts that called bootstrap). This will enforce 
-// object retrieval through the applications's registry.
-unset($frontController, $view);
+if( !isset($session->initialized) )
+{
+   Zend_Session::regenerateId();
+   $session->initialized = true;
+}
 
-?>
+// pasar parámetros de configuración
+$appLayout->config = $config;
+
+// establecer sesion con la DB
+$dbConnection = new dbConnection($config->db);
+
+// layout principal
+Zend_Layout::startMvc(array("layoutPath" => "../application/views/layouts", "layout" => "mainlayout"));
+$appLayout = Zend_Layout::getMvcInstance();
+
+$fController = Zend_Controller_Front::getInstance(); 
+$fController->setControllerDirectory("../application/controllers");
+
+unset($fController);
+
