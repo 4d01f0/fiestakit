@@ -6,7 +6,7 @@
  * 
  * @author       Adolfo Morales  <adolfo.morales@gmail.com> 
  * @package      FiestaKit
- * @copyright    Copyright 2008 Grupo Editorial Expansion	
+ * @copyright    Copyright 2009 MashedCode Co.	
  * @filesource   
  * 
  */
@@ -14,7 +14,7 @@
 //
 //	requires
 /**
- * index.php :: --here short description--
+ * index.php :: The index of the fiestakit site 
  * 
  * --long description--
  * 
@@ -26,53 +26,27 @@
  * 
  */
 
-error_reporting(E_ALL|E_STRICT);
-ini_set('display_errors', '1');
+//
+//	MAIN
+// Step 1: Set a flag indicating setup is necessary
+$bootstrap = true;
 
-// Step 1: APPLICATION_PATH is a constant pointing to our
-// application/subdirectory. We use this to add our "library" directory
-// to the include_path, so that PHP can find our Zend Framework classes.
-define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/../application/'));
-set_include_path(
-APPLICATION_PATH . '/../library' 
-. PATH_SEPARATOR . get_include_path()
-);
-
-// Step 2: AUTOLOADER - Set up autoloading.
-// This is a nifty trick that allows ZF to load classes automatically so
-// that you don't have to litter your code with 'include' or 'require'
-// statements.
-require_once "Zend/Loader.php";
-Zend_Loader::registerAutoload();
-
-// Step 3: REQUIRE APPLICATION BOOTSTRAP: Perform application-specific setup
-// This allows you to setup the MVC environment to utilize. Later you 
-// can re-use this file for testing your applications.
-// The try-catch block below demonstrates how to handle bootstrap 
-// exceptions. In this application, if defined a different 
-// APPLICATION_ENVIRONMENT other than 'production', we will output the 
-// exception and stack trace to the screen to aid in fixing the issue
+// Step 3: Perform application-specific setup
+// This allows you to setup the MVC environment to utilize. Later you can re-use this file for testing your applications
 try {
-require '../application/bootstrap.php';
-} catch (Exception $exception) {
-echo '<html><body><center>'
-. 'An exception occured while bootstrapping the application.';
-if (defined('APPLICATION_ENVIRONMENT')
-&& APPLICATION_ENVIRONMENT != 'production'
-) {
-echo '<br /><br />' . $exception->getMessage() . '<br />'
-. '<div align="left">Stack Trace:' 
-. '<pre>' . $exception->getTraceAsString() . '</pre></div>';
-}
-echo '</center></body></html>';
-exit(1);
+   require_once("../application/bootstrap.php");
+} catch (Exception $e){ 
+   echo("An exception occured while bootstrapping the application.");
+   echo("<br /><br />" . $e->getMessage() . "<br />"
+         . "<div align='left'>Stack Trace:"
+         . "<pre>" . $e->getTraceAsString() . "</pre></div>");
+
+   exit(1);
 }
 
-
-// Step 4: DISPATCH:  Dispatch the request using the front controller.
-// The front controller is a singleton, and should be setup by now. We 
-// will grab an instance and call dispatch() on it, which dispatches the
-// current request.
+// Step 4:  Dispatch the request using the front controller.
+// The front controller is a singleton, and should be setup by now. We will grab
+// an instance and dispatch it, which dispatches your application.
 Zend_Controller_Front::getInstance()->dispatch();
 
-?>
+
