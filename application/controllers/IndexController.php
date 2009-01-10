@@ -37,13 +37,6 @@ class IndexController extends Zend_Controller_Action
       $this->view->title='Hello World2!';
       $music = array('title'=>'The End of the Line','artist'=>'Metallica');
 
-		$sql = "SELECT estado_id, estado_nombre, estado_nombre as estado_url, now() as dateUpdated FROM estado "; 
-		$result = $db->query($sql); 
-
-		#$select = new Zend_Db_Select($db);                    #1 
-		#$select->from('estado'); 
-		#$select->where('1 = ?', '1'); 
-		#$result = $select->query();     
 
    }
 
