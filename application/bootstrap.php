@@ -77,6 +77,7 @@ $appLayout->config = $config;
 
 // establecer sesion con la DB
 $dbConnection = new dbConnection($config->db);
+Zend_Registry::set("dbConn", $dbConnection->dbConnection);
 
 // layout principal
 Zend_Layout::startMvc(array("layoutPath" => "../application/views/layouts", "layout" => "mainlayout"));

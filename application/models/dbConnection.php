@@ -40,12 +40,12 @@ class dbConnection
       // verificar si se cuenta con enlace a la DB
       try 
       {
-         $dbConn = Zend_Db::factory($dbConfig);
-         $dbConn->getConnection();
-         $dbConn->setFetchMode(Zend_Db::FETCH_OBJ);
+         $this->dbConnection = Zend_Db::factory($dbConfig);
+         $this->dbConnection->getConnection();
+         $this->dbConnection->setFetchMode(Zend_Db::FETCH_OBJ);
    
          // .. y establecerla como el adapter por defecto
-         Zend_Db_Table_Abstract::setDefaultAdapter($dbConn);
+         //Zend_Db_Table_Abstract::setDefaultAdapter($this->dbConn);
 
       } 
       catch (Zend_Db_Adapter_Exception $e) 
