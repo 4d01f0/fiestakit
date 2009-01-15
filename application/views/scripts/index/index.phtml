@@ -1,36 +1,3 @@
-		<div><?= $this->title; ?></div>
-
-
-<table width="100%" border="0" cellpadding="0" cellspacing="0" bgcolor="#000000">
-  <tr>
-    <td><table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#000000">
-      <tr>
-        <td width="790" ><div align="left" class="topnegro">Directorio de productos y servicios para todo tipo de fiesta, evento o convenci&oacute;n</div></td>
-        <td width="173" ><div align="right" class="topnegro">Presentes en todo M&eacute;xico </div></td>
-        <td width="37" ><img src="/images/bandera.gif" width="26" height="25" /></td>
-      </tr>
-    </table>
-    </td>
-  </tr>
-</table>
-<table width="1000" border="0" align="center" cellpadding="0" cellspacing="0">
-  <tr>
-    <td height="168" colspan="2" background="/images/top.png">&nbsp;</td>
-  </tr>
-  <tr>
-    <td width="570" height="31" background="/images/back-menu.jpg"><table width="400" height="31" border="0" cellpadding="0" cellspacing="0">
-      <tr>
-        <td width="30%" height="31"><div id="menuLinks"><a href="#">Inicio</a></div></td>
-        <td width="34%" height="31"><div id="menuLinks"><a href="#">An&uacute;nciate</a></div></td>
-        <td width="33%" height="31"><div id="menuLinks"><a href="#">Servicios </a></div></td>
-      </tr>
-    </table></td>
-    <td width="440" height="31" background="/images/back-menu.jpg" ><div id="letras">SERVICIOS  Y PRODUCTOS PARA TU FIESTA, EVENTO O CONVENCI&Oacute;N</div></td>
-  </tr>
-  <tr>
-    <td height="5" colspan="2"></td>
-  </tr>
-</table>
 <table width="1000" border="0" align="center" cellpadding="0" cellspacing="0" background="/images/back-page.png">
   <tr>
     <td width="13">&nbsp;</td>
@@ -47,38 +14,41 @@
       <tr>
         <td><table width="400" border="0" cellpadding="0" cellspacing="0" background="/images/ninia3.png">
           <tr>
-				<td width="196" valign="top"><div id="list-menu"><ul>
-				  <li><a href="#">Aguascalientes</a></li>
-              <li><a href="#">Baja California</a></li>
-              <li><a href="#">Baja California Sur</a></li>
-              <li><a href="#">Chiapas</a></li>
-              <li><a href="#">Chihuahua </a></li>
-              <li><a href="#">Coahuila </a></li>
-              <li><a href="#">Colima </a></li>
-              <li><a href="#">Distrito Federal </a></li>
-              <li><a href="#">Durango </a></li>
-              <li><a href="#">Guanajuato </a></li>
-              <li><a href="#">Guerrero </a></li>
-              <li><a href="#">Hidalgo </a></li>
-              <li><a href="#">Jalisco</a></li>
-              <li><a href="#">Michoac&aacute;n</a></li>
-              <li><a href="#">Morelos </a></li>
-              <li><a href="#">Estado de M&eacute;xico</a></li></ul></div>
+				<td width="196" valign="top"><div id="list-menu">
+              <ul>
+              <!-- ?= $this->l_estados; ? -->
+				  <li><a href="estado/ags">Aguascalientes</a></li>
+              <li><a href="estado/bc">Baja California</a></li>
+              <li><a href="estado/bcn">Baja California Sur</a></li>
+              <li><a href="estado/chp">Chiapas</a></li>
+              <li><a href="estado/chi">Chihuahua </a></li>
+              <li><a href="estado/coa">Coahuila </a></li>
+              <li><a href="estado/col">Colima </a></li>
+              <li><a href="estado/df">Distrito Federal </a></li>
+              <li><a href="estado/dur">Durango </a></li>
+              <li><a href="estado/gua">Guanajuato </a></li>
+              <li><a href="estado/gue">Guerrero </a></li>
+              <li><a href="estado/hgo">Hidalgo </a></li>
+              <li><a href="estado/jal">Jalisco</a></li>
+              <li><a href="estado/mich">Michoac&aacute;n</a></li>
+              <li><a href="estado/mor">Morelos </a></li>
+              <li><a href="estado/mex">Estado de M&eacute;xico</a></li></ul></div>
             <td width="204" valign="top"><div id="list-menu"><ul><li><a href="#">Nayarit </a></li>
-              <li><a href="#">Nuevo Le&oacute;n </a></li>
-              <li><a href="#">Oaxaca</a></li>
-              <li><a href="#">Puebla</a> </li>
-              <li><a href="#">Quer&eacute;taro </a></li>
-              <li><a href="#">Quintana Roo</a></li>
-              <li><a href="#">San Luis Potos&iacute; </a></li>
-              <li><a href="#">Sinaloa </a></li>
-              <li><a href="#">Sonora </a></li>
-			  <li><a href="#">Tabasco</a> </li>
-              <li><a href="#">Tamaulipas</a></li>
-              <li><a href="#">Tlaxcala</a></li>
-              <li><a href="#">Veracruz </a></li>
-              <li><a href="#">Yucat&aacute;n </a></li>
-              <li><a href="#">Zacatecas</a></li></ul></div></td>
+              <li><a href="estado/nl">Nuevo Le&oacute;n </a></li>
+              <li><a href="estado/oax">Oaxaca</a></li>
+              <li><a href="estado/pue">Puebla</a> </li>
+              <li><a href="estado/que">Quer&eacute;taro </a></li>
+              <li><a href="estado/qui">Quintana Roo</a></li>
+              <li><a href="estado/slp">San Luis Potos&iacute; </a></li>
+              <li><a href="estado/sin">Sinaloa </a></li>
+              <li><a href="estado/son">Sonora </a></li>
+			     <li><a href="estado/tab">Tabasco</a> </li>
+              <li><a href="estado/tam">Tamaulipas</a></li>
+              <li><a href="estado/tla">Tlaxcala</a></li>
+              <li><a href="estado/ver">Veracruz </a></li>
+              <li><a href="estado/yuc">Yucat&aacute;n </a></li>
+				  <li><a href="estado/zac">Zacatecas</a></li>
+            </ul></div></td>
           </tr>
         </table>
           <table width="400" border="0" cellspacing="0" cellpadding="0">
@@ -157,79 +127,38 @@ border-left: 1px solid #71828A;">
               <td valign="top" class="AB">C - F </td>
             </tr>
             <tr>
-              <td width="259" valign="top"><div id="list-menu2"><ul><li><a href="#">Accesorios</a> </li>
-                  <li><a href="#">Agencia Viajes</a></li>
-                  <li><a href="#">Agencias multiservicios</a></li>
-                  <li><a href="#">Alquiler de automóviles</a></li>
-                  <li><a href="#">Alquiler de manteler&iacute;a fina</a></li>
-                  <li><a href="#">Alquiler de montaje</a></li>
-                  <li><a href="#">Alquiler de trajes etiqueta</a></li>
-                  <li><a href="#">Alquiler equipo audiovisual </a></li>
-                  <li><a href="#">Alquiler equipo lounge</a></li>
-                  <li><a href="#">Articulos para organizadores</a></li>
-                  <li><a href="#">Audio e iluminación</a></li>
-                  <li><a href="#">Banquetes a domicilio</a></li>
-                  </ul></div>
+				  <td width="259" valign="top">
+                <div id="list-menu2">
+                  <ul>
+                    <?= $this->categoria_ab; ?>
+						</ul>
+                </div>
                 <div>
                   <div align="center"><img src="/images/divisor.gif" alt="fiestas" longdesc="eventos" /></div>
                 </div>
                 <div><span class="AB">G - M </span></div>
                 <div id="list-menu2">
                   <ul>
-                    <li><a href="#">Galletas</a> </li>
-                    <li><a href="#">Grupos musicales</a></li>
-                    <li><a href="#">Haciendas</a></li>
-                    <li><a href="#">Imitadores</a></li>
-                    <li><a href="#">Invitaciones</a></li>
-                    <li><a href="#">Jard&iacute;nes</a></li>
-                    <li><a href="#">Liberaci&oacute;n de mariposas</a></li>
-                    <li><a href="#">Lugares: salones, jardines, museos, ex-haciendas...</a></li>
-                    <li><a href="#">Maquillaje y Peinado</a></li>
-                    <li><a href="#">Mariachis</a></li>
-                    <li><a href="#">Moda y confecci&oacute;n</a></li>
-                    <li><a href="#">M&uacute;sica de misa y cena</a></li>
+                    <?= $this->categoria_gm; ?>
                   </ul>
-                </div></td>
-              <td width="279" valign="top"><div id="list-menu2"><ul><li><a href="#">Calzado</a></li>
-                  <li><a href="#">Cl&iacute;nicas de belleza</a></li>
-                  <li><a href="#">Coordinadores de eventos</a></li>
-                  <li><a href="#">Coreograf&iacute;as para XV A&ntilde;os</a> </li>
-                  <li><a href="#">Coros</a></li>
-                  <li><a href="#">Decoraci&oacute;n</a></li>
-                  <li><a href="#">Disfrases</a></li>
-                  <li><a href="#">DJ</a></li>
-                  <li><a href="#">Esculturas de hielo</a></li>
-                  <li><a href="#">Espect&aacute;culos</a> </li>
-                  <li><a href="#">Fiestas tipo disco</a></li>
-                  <li><a href="#">Fincas</a></li>
-                  <li><a href="#">Florer&iacute;as</a></li>
-                  <li><a href="#">Fotograf&iacute;a y video</a></li>
-                <li><a href="#">Fuentes de Chocolate</a></li>
-              </ul>
-              </div>
+					 </div>
+              </td>
+				  <td width="279" valign="top">
+					 <div id="list-menu2">
+                  <ul>
+                    <?= $this->categoria_cf; ?>
+                  </ul>
+                </div>
                 <div>
                   <div align="center"><img src="/images/divisor.gif" alt="fiestas" longdesc="eventos" /></div>
                 </div>
                 <div><span class="AB">N - Z </span></div>
                 <div id="list-menu2">
                   <ul>
-                    <li><a href="#">Novedades</a> </li>
-                    <li><a href="#">Organizadores de eventos</a></li>
-                    <li><a href="#">Orquestas de c&aacute;mara</a></li>
-                    <li><a href="#">Pasteler&iacute;as</a></li>
-                    <li><a href="#">Pirot&eacute;cnia</a></li>
-                    <li><a href="#">Recuerdos</a></li>
-                    <li><a href="#">Regalos</a></li>
-                    <li><a href="#">Salones de belleza</a></li>
-                    <li><a href="#">Salones de eventos</a></li>
-                    <li><a href="#">Seguridad privada</a></li>
-                    <li><a href="#">U&ntilde;as</a></li>
-                    <li><a href="#">Vacaciones</a></li>
-					<li><a href="#">Vestidos de:<br />
-Novia, XV A&ntilde;os y Cocktail</a></li>
-					<li><a href="#">Vinos y licores</a></li>
-					</ul>
-                </div></td>
+                    <?= $this->categoria_nz; ?>
+					   </ul>
+                </div>
+              </td>
             </tr>
           </table></td>
         </tr>

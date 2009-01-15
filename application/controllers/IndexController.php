@@ -4,9 +4,9 @@
 /**
  * $SYSNAME :: $SYSDESCRIPTION 
  * 
- * @author       Adolfo Morales  <adolfom@expansion.com.mx> 
- * @package      $SYSNAME
- * @copyright    Copyright 2008 Grupo Editorial Expansion	
+ * @author       Adolfo Morales  <adolfo.morales@gmail.com> 
+ * @package      Fiestakit
+ * @copyright    Copyright 2009 MashedCode Co.	
  * @filesource   
  * 
  */
@@ -41,52 +41,59 @@ class IndexController extends Zend_Controller_Action
 
    public function indexAction()
    {
+		$title="FiestaKit - La mejor opci&oacute;n para tu fuesta";
+      $this->view->assign('title', $title);
+
 		$dbConn = Zend_Registry::get("dbConn");
 		//echo("<pre>".print_r($dbConn)."</pre>");
-		$query = $dbConn->fetchAll("select estado_nombre, estado_id from estado");
+		$query = $dbConn->fetchAll("select estado, estado_id from estado");
 		//echo("<pre>".print_r($query)."</pre>");
-		//echo string($query[0]);
 		
-		echo '<h1>All articles with default sort order</h1>';
-		#reset($query);
-
-		/*
-		$a = array(1, 2, 3, 17); 
-		foreach($query[0] as $v) { 
-			print "Valor actual de \$a: $v.\n"; 
-		} 
-		 */
-
-		$i=0;
-
-		//echo("<pre>".print_r($query)."</pre>");
-
 		$combo = "";
-
 		foreach ($query as $row)
 		{
-			$combo .= '<option value="' . $row->estado_id . '">' . $row->estado_nombre . '</option>';
-			//echo 'Estado#' . $row->estado_nombre . '<br />';
-			//echo 'Id#' . $row->estado_id . '<br />';
+			$combo .= '<option value="' . $row->estado_id . '">' . $row->estado . '</option>';
 		}
       $this->view->assign('c_estados', $combo);
 
+		reset($query);
+		$lista = "";
+		while( list( , $row ) = each( $query ) ) { 
+			$lista .= '<li style="float:left"><a href="/estado/' . $row->estado_id . '">' . $row->estado . '</a></li>';
+		} 
+      $this->view->assign('l_estados', $lista);
+
+		$query= $dbConn->fetchAll("SELECT categoria_nombre, categoria_id FROM categoria WHERE categoria_nombre RLIKE '^[a-b]' ORDER BY categoria_nombre");
 		//echo("<pre>".print_r($query)."</pre>");
-		//while( list( , $row ) = each( $query ) ) { 
-		//	echo $row->estado_nombre;
-		//} 
+		$lista = "";
+		while( list( , $row ) = each( $query ) ) { 
+			$lista .= '<li><a href="/categoria/' . $row->categoria_id . '">' . $row->categoria_nombre . '</a></li>';
+		} 
+      $this->view->assign('categoria_ab', $lista);
 
-		/*
-		foreach ($query as $row)
-		{
-				echo 'Article #' . $row['estado_id'] . '<br />';
-		}
-		echo '<hr />';
-		 */
-		/* foreach ejemplo 1: sólo valor*/ 
+		$query= $dbConn->fetchAll("SELECT categoria_nombre, categoria_id FROM categoria WHERE categoria_nombre RLIKE '^[c-f]' ORDER BY categoria_nombre ");
+		//echo("<pre>".print_r($query)."</pre>");
+		$lista = "";
+		while( list( , $row ) = each( $query ) ) { 
+			$lista .= '<li><a href="/categoria/' . $row->categoria_id . '">' . $row->categoria_nombre . '</a></li>';
+		} 
+      $this->view->assign('categoria_cf', $lista);
 
+		$query= $dbConn->fetchAll("SELECT categoria_nombre, categoria_id FROM categoria WHERE categoria_nombre RLIKE '^[g-m]' ORDER BY categoria_nombre ");
+		//echo("<pre>".print_r($query)."</pre>");
+		$lista = "";
+		while( list( , $row ) = each( $query ) ) { 
+			$lista .= '<li><a href="/categoria/' . $row->categoria_id . '">' . $row->categoria_nombre . '</a></li>';
+		} 
+      $this->view->assign('categoria_gm', $lista);
 
-      $this->view->assign('title', 'Hello World!');
+		$query= $dbConn->fetchAll("SELECT categoria_nombre, categoria_id FROM categoria WHERE categoria_nombre RLIKE '^[n-z]' ORDER BY categoria_nombre ");
+		//echo("<pre>".print_r($query)."</pre>");
+		$lista = "";
+		while( list( , $row ) = each( $query ) ) { 
+			$lista .= '<li><a href="/categoria/' . $row->categoria_id . '">' . $row->categoria_nombre . '</a></li>';
+		} 
+      $this->view->assign('categoria_nz', $lista);
 
    }
 
