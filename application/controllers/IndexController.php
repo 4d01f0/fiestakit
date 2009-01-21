@@ -49,6 +49,7 @@ class IndexController extends Zend_Controller_Action
 		$query = $dbConn->fetchAll("select estado, estado_id from estado");
 		//echo("<pre>".print_r($query)."</pre>");
 		
+		#Construimos combo para los estados
 		$combo = "";
 		foreach ($query as $row)
 		{
@@ -56,6 +57,7 @@ class IndexController extends Zend_Controller_Action
 		}
       $this->view->assign('c_estados', $combo);
 
+		#Se genera barra izquierda de estados usando el query anterior
 		reset($query);
 		$lista = "";
 		while( list( , $row ) = each( $query ) ) { 
@@ -63,6 +65,7 @@ class IndexController extends Zend_Controller_Action
 		} 
       $this->view->assign('l_estados', $lista);
 
+		#Se crea lista de categorias de A->B
 		$query= $dbConn->fetchAll("SELECT categoria_nombre, categoria_id FROM categoria WHERE categoria_nombre RLIKE '^[a-b]' ORDER BY categoria_nombre");
 		//echo("<pre>".print_r($query)."</pre>");
 		$lista = "";
@@ -71,6 +74,7 @@ class IndexController extends Zend_Controller_Action
 		} 
       $this->view->assign('categoria_ab', $lista);
 
+		#Se crea lista de categorias de C->F
 		$query= $dbConn->fetchAll("SELECT categoria_nombre, categoria_id FROM categoria WHERE categoria_nombre RLIKE '^[c-f]' ORDER BY categoria_nombre ");
 		//echo("<pre>".print_r($query)."</pre>");
 		$lista = "";
@@ -79,6 +83,7 @@ class IndexController extends Zend_Controller_Action
 		} 
       $this->view->assign('categoria_cf', $lista);
 
+		#Se crea lista de categorias de G->M
 		$query= $dbConn->fetchAll("SELECT categoria_nombre, categoria_id FROM categoria WHERE categoria_nombre RLIKE '^[g-m]' ORDER BY categoria_nombre ");
 		//echo("<pre>".print_r($query)."</pre>");
 		$lista = "";
@@ -87,6 +92,7 @@ class IndexController extends Zend_Controller_Action
 		} 
       $this->view->assign('categoria_gm', $lista);
 
+		#Se crea lista de categorias de N->Z
 		$query= $dbConn->fetchAll("SELECT categoria_nombre, categoria_id FROM categoria WHERE categoria_nombre RLIKE '^[n-z]' ORDER BY categoria_nombre ");
 		//echo("<pre>".print_r($query)."</pre>");
 		$lista = "";
@@ -95,6 +101,14 @@ class IndexController extends Zend_Controller_Action
 		} 
       $this->view->assign('categoria_nz', $lista);
 
+		#Se crea combo de categorias de N->Z
+		$query= $dbConn->fetchAll("SELECT categoria_nombre, categoria_id FROM categoria ORDER BY categoria_nombre ");
+		//echo("<pre>".print_r($query)."</pre>");
+		$combo = "";
+		while( list( , $row ) = each( $query ) ) { 
+			$combo .= '<option value="' . $row->categoria_id . '">' . $row->categoria_nombre . '</option>';
+		} 
+      $this->view->assign('c_categoria', $combo);
    }
 
 
